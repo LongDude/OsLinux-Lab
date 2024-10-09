@@ -1,0 +1,10 @@
+[Unit]
+Description=Battery Analyzer timer
+
+[Timer]
+OnUnitActiveSec=30s
+Unit=battery-timer.service
+AccuracySec=1s
+
+[Install]
+WantedBy=timers.target

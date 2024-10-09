@@ -1,0 +1,10 @@
+[Unit]
+Description=Battery timer
+
+[Service]
+Type=simple
+ExecStart=/home/longdude/battery_timer.sh
+User=longdude
+
+[Install]
+WantedBy=getty.target
