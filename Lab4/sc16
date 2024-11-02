@@ -1,0 +1,29 @@
+#!/bin/bash
+
+if [[ $# -eq 0 ]]
+then
+	echo 'Ожидался позиционный параметр - имя файла'
+	exit
+fi
+
+if [[ -f $1 ]]
+then
+	size=`stat --format=%s $1`
+	if [[ $size -eq 0 ]]
+	then
+		echo 'Размер файла нулевой. Прекращение работы'
+	else
+		echo 'Размер файла:' $size
+		
+		echo 'Исходный файл:'
+		cat $1
+		
+		sort $1 -k 1 > sc16.out
+		
+		echo 'Отсортированный файл:'
+		cat sc16.out
+	fi 
+
+else
+	echo 'Файл' $1 'не существует'
+fi

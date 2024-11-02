@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [[ $# -eq 0 ]]
+then echo 'Не указано имя файла'
+elif [[ -f $1 ]]
+then
+	clear
+	
+	cat $1
+	printf '\nОжидайте 5 секунд\n\n'
+	sleep 5
+	
+	clear
+else
+	echo 'Файл не найден'
+fi

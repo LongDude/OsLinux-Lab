@@ -1,0 +1,4 @@
+#!/bin/bash
+
+read -p "Введите значение: " var
+echo $var

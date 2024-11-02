@@ -1,0 +1,10 @@
+#!/bin/bash
+
+read -p 'Введите год: ' year
+
+if [[ $(( year % 4 )) -eq 0 ]]
+then 
+	echo 'Год високосный'
+else 
+	echo 'Год не високосный'
+fi

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+password='teststr17'
+
+if [[ $# -eq 0 ]]
+then
+	echo 'Ожидался парроль в качестве аргумента'
+	exit
+fi
+
+if [[ $password = $1 ]]
+then
+	ls /etc -al | more
+else
+	echo 'Неправильный пароль.'
+fi

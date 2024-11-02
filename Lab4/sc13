@@ -1,0 +1,26 @@
+#!/bin/bash
+
+read -p 'Введите имя файла: ' file
+if [[ -d $file ]]
+then
+	echo 'Каталог существует'
+	if [[ -r $file ]]
+	then
+		echo 'Содержимое каталога:'
+		ls $file | more
+	else
+		echo 'Чтение содержимого невозможно'
+	fi
+elif [[ -f $file ]]
+then
+	echo 'Файл не является каталогом.'
+	if [[ -r $file ]]
+	then
+		cat $file
+	else
+		echo 'Чтение невозможно'
+	fi
+else
+	echo 'Создаётся новый каталог'
+	mkdir $file
+fi

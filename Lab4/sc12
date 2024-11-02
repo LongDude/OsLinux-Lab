@@ -1,0 +1,12 @@
+#!/bin/bash
+
+read -p 'Введите имя файла: ' file
+
+if [[ -f $file ]]
+then
+	cat $file
+else
+	echo 'Файл не существует'
+	echo
+fi
+

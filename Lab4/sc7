@@ -1,0 +1,14 @@
+#!/bin/bash
+
+clear
+for f in `ls`
+do
+	echo $f
+	echo
+	
+	cat $f
+	echo
+	
+	read -p 'Нажмите Enter для продолжения...'
+	clear
+done

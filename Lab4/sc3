@@ -1,0 +1,13 @@
+#!/bin/bash
+
+read -p 'Введите переменную a: ' a
+read -p 'Введите переменную b: ' b
+read -p 'Укажите операцию: ' op
+
+printf 'Сложение через expr: '
+expr $a $op $b
+
+printf 'Сложение через bc: '
+
+echo "scale=5; $a$op$b" | bc
+

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [[ $# -ne 3 ]]
+then 
+	echo 'Ожидалось 3 аргумента: диапазон размеров min-max и имя файла'
+	exit
+fi
+
+if [[ -d $3 ]]
+then
+	cd $3
+	for file in `ls`
+	do
+		s=`stat --printf=%s $file`
+		if [[ $s -ge $1 ]] && [[ $s -le $2 ]]
+		then
+			ls -l $file
+		fi
+	done
+else
+	echo 'Каталог' $3 'не существует' 
+fi

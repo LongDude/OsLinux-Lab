@@ -1,0 +1,32 @@
+#!/bin/bash
+
+read -p 'Переменная 1: ' var1
+read -p 'Переменная 2: ' var2
+
+read -p 'Диапазон данных первой переменной: ' l1 r1
+read -p 'Диапазон данных второй переменной: ' l2 r2
+
+cycle=1
+
+while [[ $cycle -eq 1 ]]
+do
+	cycle=0
+	
+	if [[ $var1 -gt $l1 ]] && [[ $var1 -lt $r1 ]]
+	then
+		(( var1++ ))
+		echo 'Увеличиваем переменную 1: ' $var1
+		cycle=1
+	fi 
+
+	if [[ $var2 -gt $l2 ]] && [[ $var2 -lt $r2 ]]
+	then
+		(( var2++ ))
+		echo 'Увеличиваем переменную 2: ' $var2
+		cycle=1
+	fi 
+	
+done
+
+echo 'Перменная 1:' $var1
+echo 'Перменная 2:' $var2
